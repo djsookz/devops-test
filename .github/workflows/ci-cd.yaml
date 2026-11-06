@@ -28,7 +28,9 @@ jobs:
 
       - name: Update deployment image tag
         run: |
-          sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:.*|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:${{ github.sha }}|g' k8s/deployment.yaml
+          sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:.*|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:${{ github.sha }}|g' k8s/staging/deployment.yaml
+          sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:.*|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:${{ github.sha }}|g' k8s/production/deployment.yaml
+          sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:.*|image: ${{ secrets.DOCKER_USERNAME }}/python-web-app:${{ github.sha }}|g' k8s/sandbox/deployment.yaml
 
       - name: Commit and push updated manifest
         run: |

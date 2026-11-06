@@ -6,7 +6,9 @@ Vagrant.configure("2") do |config|
   config.vm.boot_timeout = 360
 
   # Оставяме само Port Forwarding (махли private_network за момента)
-  config.vm.network "forwarded_port", guest: 30080, host: 30080
+  config.vm.network "forwarded_port", guest: 30081, host: 30081
+  config.vm.network "forwarded_port", guest: 30082, host: 30082
+  config.vm.network "forwarded_port", guest: 30083, host: 30083
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 
   config.vm.provider "virtualbox" do |v|

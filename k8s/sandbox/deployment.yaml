@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-web-app-sandbox
+  namespace: sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-web-app-sandbox
+  template:
+    metadata:
+      labels:
+        app: python-web-app-sandbox
+    spec:
+      containers:
+      - name: python-web-app
+        image: dimakadocker/python-web-app:latest
+        ports:
+        - containerPort: 5000

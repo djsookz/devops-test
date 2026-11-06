@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: python-web-app
-        image: dimakadocker/python-web-app:acd08087c1ff934557b53535ca82db8c36ddaa76
+        image: dimakadocker/python-web-app:bfe8ef7661c3c7223c1c040f0cb6674f0040f838
         ports:
         - containerPort: 5000
